@@ -1,0 +1,195 @@
+:root {
+    --cor-primária: #F5F7F8;
+    --cor-secundária: #F4CE14;
+    --cor-escura: #495E57;
+    --cor-mais-escura: #45474B;
+    --brancos: white;
+    --pretos: black;
+}
+
+@font-face {
+    font-family: Nexa-Heavy;
+    src: local(Nexa-Heavy), url(assets\nexa\Nexa-Heavy.ttf)
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    max-height: 100%;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 75px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 150px;
+    margin-right: 150px;                                                                                                                                                                   ;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--cor-mais-escura);
+    font-size: 17px;
+    display: inline-block;
+    position: relative;
+    font-family: Nexa-Heavy;
+}
+
+nav ul li a:after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: var(--cor-secundária);
+    transition: width 0.3s ease-in-out 0s, left 0.3s ease-in-out 0s;
+    width: 0;
+}
+nav ul li a:hover:after{
+    width: 97%;
+    left: 0;
+}
+@media screen and (max-height: 300px){
+    ul{
+        margin-top: 40px;
+    }
+}
+
+.logo{
+    width: 80px;
+}
+
+body{
+    background-color: var(--cor-primária);
+}
+
+main{
+    display: flex;
+    font-family: Nexa-Heavy;
+    flex-direction: column;
+}
+
+main img{
+    height: 350px; 
+    border-radius: 50%;
+}
+
+.Tela_inicial{
+    display: flex;
+    flex-direction: row;
+    margin: 10%;
+    align-items: center;
+    gap: 250px;
+}
+
+
+.h1{
+    color: var(--cor-secundária);
+    font-size: 50px;
+}
+
+.h2{
+    color: var(--cor-mais-escura);
+}
+
+.p{
+    color: var(--cor-escura);
+    
+}
+
+.botão{
+    height: 30px;
+    width: 120px;
+    background-color: var(--cor-secundária);
+    font-size: 24px;
+    border: 2px solid var(--cor-secundária);
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 30px;
+    display: flex;
+    text-decoration: none;
+    color: var(--pretos);
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: width 0.3s ease-in-out 0s, height 0.3s ease-in-out 0s, font-size 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+}
+
+.botão:hover{
+    width: 150px;
+    height: 40px;   
+    font-size: 35px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Tela_informações{
+    background-color: var(--cor-escura);
+    height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;                
+    align-items: center;    
+    justify-content: center;
+    gap: 50px;
+}
+
+.Tela_informações h1{
+    color: var(--brancos);
+    font-size: 50px;
+
+}
+
+.blocos{
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+
+.blocos div{
+height: 550px;
+width: 400px;
+background-color: var(--cor-mais-escura);
+border-radius: 30px;
+font-size: 120%;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+transition: width 0.3s ease-in-out 0s, height 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+}
+
+.blocos div:hover{
+    height: 600px;
+    width: 450px;
+    font-size: 133%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+.blocos h2{
+    color: var(--cor-secundária);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.blocos p{
+    color: var(--brancos);
+    text-align: justify;
+    margin: 8%;
+    
+    transition: font-size 0.3s ease-in-out 0s;
+}
