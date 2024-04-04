@@ -87,10 +87,10 @@ main{
     flex-direction: column;
 }
 
-main img{
-    height: 350px; 
-    border-radius: 50%;
-}
+  main img{
+      height: 350px; 
+      border-radius: 50%;
+  }
 
 .Tela_inicial{
     display: flex;
@@ -99,6 +99,11 @@ main img{
     justify-content: center;
     gap: 20%;
     height: 500px;
+}
+
+.textos{
+    display: flex;
+    flex-direction: column;
 }
 
 .h1{
@@ -143,7 +148,43 @@ main img{
     height: 40px;   
     font-size: 35px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
+  }
+  
+
+  @media (width > 650px) and (width < 900px) {
+
+    .Tela_inicial{
+      flex-direction: column;
+      gap: 10%; 
+      height: 700px;
+
+      & .textos {gap: 3%; align-items: center;}
+      & .h1 {font-size: 60px;}
+      & .h2 {font-size: 30px;}
+      & .p {font-size: 20px;}
+    }    
+  }
+  
+
+  @media (width < 650px) {  
+
+    nav {display: none;}
+
+    .Tela_inicial{
+      flex-direction: column;
+      gap: 10%;
+      height: 800px;
+      
+      & .textos {gap: 3%;}
+      & .h1 {font-size: 40px;}
+      & .h2 {font-size: 20px;}
+      & .p {font-size: 15px;}
+    }
+  }
+
+
+  /*Página das informaçõe*/
+
 
 .Tela_informações{
     background-color: var(--cor-escura);
@@ -162,27 +203,35 @@ main img{
     font-size: 80px;
 }
 
+.container-info{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .blocos{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 75px;
-    height: 75%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 75px;
+  height: 70%;
 }
 
 .blocos div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 75%;
-    width: 25%;
-    background-color: var(--cor-mais-escura);
-    border-radius: 30px;
-    font-size: 120%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    transition: width 0.3s ease-in-out 0s, height 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80%;
+  width: 25%;
+  background-color: var(--cor-mais-escura);
+  border-radius: 30px;
+  font-size: 120%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: width 0.3s ease-in-out 0s, height 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
 }
 
 .blocos div:hover{
@@ -204,9 +253,43 @@ main img{
     transition: font-size 0.3s ease-in-out 0s;
 }
 
+
+@media (width > 650px) and (width < 900px) {
+
+  .Tela_informações{
+    height: 1750px;
+  }
+
+  .container-info{
+    gap: 10%;
+
+    & .blocos {flex-direction: column;}
+    & .blocos div{width: 90%; height: 40%;}
+    & .blocos div:hover{width: 95%; height: 50%;}
+  }
+}
+
+
+@media (width < 650px) {
+  .Tela_informações{
+    height: 2500px;
+  }
+  
+  .container-info{
+    flex-direction: column;
+    gap: 10%;
+    
+    & h1 {font-size: 50px; }
+    & .blocos {flex-direction: column;}
+    & .blocos div{width: 85%; height: 45%;}
+    & .blocos div:hover{width: 90%; height: 55%;}
+  }
+}
+
+
 /*Página das habilidades*/
 
-.hbl{
+.hbl{ 
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -375,6 +458,18 @@ main img{
 }
   
 @media (width < 650px) {
+
+  .hbl-h1{
+    height: 10vh;
+  }
+  .hbl h1{
+    font-size: 50px;
+  }
+
+  .body-slide{
+    height: 70vh;
+  }
+
   .content {
     & .title        { font-size: 0.9rem; }
     & .description  { font-size: 0.65rem; }
@@ -473,7 +568,7 @@ section{
 
 section h2{
     color: var(--cor-secundária);
-    font-size: 2.5rem;
+    font-size: 4rem;
     margin: 2rem;
 }
 
@@ -496,10 +591,12 @@ form input{
     margin-bottom: 20px;
     font-size: 15px;
     transition: all 0.5s;
+    height: 5px;
+    border-radius: 5px;
 }
 
 form input:focus{
-    border-radius: 16px;
+    border-radius: 15px;
 }
 
 form textarea{
@@ -509,6 +606,7 @@ form textarea{
     font-size: 15px;
     margin-bottom: 30px;
     transition: all 0.5s;
+    border-radius: 5px;
 }
 
 form textarea:focus{
@@ -532,6 +630,44 @@ form button:hover{
   color: var(--pretos);
 }
 
+
+@media (width > 650px) and (width < 900px) {
+  
+  .tudo-ctt{ 
+    height: 1300px;
+    justify-content: center;
+
+    & .content-ctt {flex-direction: column;}
+    & .esquerdinha {gap: 5%; align-items: center;}
+    & .esquerdinha h1 {font-size: 100px;}
+    & #seta {transform: rotate(-45deg);}
+  }
+}
+
+@media (width < 650px) {
+
+  .tudo-ctt{ 
+    height: 1200px;
+    justify-content: center;
+
+    & .content-ctt {flex-direction: column;}
+    & .esquerdinha {gap: 5%; align-items: center;}
+    & .esquerdinha h1 {font-size: 55px;}
+    & #seta {transform: rotate(-45deg);}
+  }
+
+  section {
+    width: 80%;
+    height: 90%;
+
+    & h2 {font-size: 2rem; margin: 1rem;}
+    & form label{font-size: 15px;}
+    & form input{height: 10px; margin-bottom: 10px;}
+    & form textarea{height: 100px;}
+  }
+}
+
+
 /*Página do Obrigado*/
 
 .main{
@@ -542,6 +678,9 @@ form button:hover{
    background: var(--brancos);
    flex-direction: column;
    font-family: Nexa-Heavy;
+   h1{
+    text-align: center;
+   }
 }
 .text{
     font-size: 45px;
@@ -572,6 +711,8 @@ form button:hover{
   width: 60px;
 }
 
+
+
 /*Footer*/
 
 footer{
@@ -583,12 +724,12 @@ footer{
 }
 
 footer div{
-  width: 50%;
-  height: 100%;
   margin-left: 10%;
   margin-right: 10%;
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content:space-between;
 }
 
 footer h3{
@@ -596,9 +737,6 @@ footer h3{
   font-family: Nexa-Heavy;
 }
 
-.direita{
-  justify-content: end;
-}
 
 .up{
   background-color: var(--cor-secundária);
